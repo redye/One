@@ -28,6 +28,7 @@
 		85740F7D1D6D7E580055A1BD /* MusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85740F7C1D6D7E580055A1BD /* MusicViewController.swift */; };
 		85740F7F1D6D7E5F0055A1BD /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85740F7E1D6D7E5F0055A1BD /* MovieViewController.swift */; };
 		85740F811D6D86890055A1BD /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85740F801D6D86890055A1BD /* BaseNavigationController.swift */; };
+		85740F841D6D8A850055A1BD /* UIColor(Extensions).swift in Sources */ = {isa = PBXBuildFile; fileRef = 85740F831D6D8A850055A1BD /* UIColor(Extensions).swift */; };
 		857C4D031D66B3190044E5EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857C4D021D66B3190044E5EB /* AppDelegate.swift */; };
 		857C4D081D66B3190044E5EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 857C4D061D66B3190044E5EB /* Main.storyboard */; };
 		857C4D0A1D66B3190044E5EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 857C4D091D66B3190044E5EB /* Assets.xcassets */; };
@@ -74,6 +75,7 @@
 		85740F7C1D6D7E580055A1BD /* MusicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicViewController.swift; sourceTree = "<group>"; };
 		85740F7E1D6D7E5F0055A1BD /* MovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
 		85740F801D6D86890055A1BD /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		85740F831D6D8A850055A1BD /* UIColor(Extensions).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor(Extensions).swift"; sourceTree = "<group>"; };
 		857C4CFF1D66B3190044E5EB /* One.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = One.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		857C4D021D66B3190044E5EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		857C4D071D66B3190044E5EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -137,6 +139,14 @@
 			path = Index;
 			sourceTree = "<group>";
 		};
+		85740F821D6D89FE0055A1BD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				85740F831D6D8A850055A1BD /* UIColor(Extensions).swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		857C4CF61D66B3190044E5EB = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +168,7 @@
 		857C4D011D66B3190044E5EB /* One */ = {
 			isa = PBXGroup;
 			children = (
+				85740F821D6D89FE0055A1BD /* Extensions */,
 				85740F681D6D37740055A1BD /* Index */,
 				85FC1A621D6BFA0000CC15D2 /* Home */,
 				85FC1A761D6BFA0000CC15D2 /* Reading */,
@@ -360,6 +371,7 @@
 				85740F791D6D7E450055A1BD /* HomeViewController.swift in Sources */,
 				85740F6F1D6D382D0055A1BD /* IndexTabBarController.swift in Sources */,
 				85740F7B1D6D7E500055A1BD /* ReadingViewController.swift in Sources */,
+				85740F841D6D8A850055A1BD /* UIColor(Extensions).swift in Sources */,
 				85740F771D6D38850055A1BD /* ReadingNavigationController.swift in Sources */,
 				85740F6A1D6D37740055A1BD /* IndexViewController.swift in Sources */,
 				85740F7F1D6D7E5F0055A1BD /* MovieViewController.swift in Sources */,
