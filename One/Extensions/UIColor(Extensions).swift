@@ -10,8 +10,15 @@ import UIKit
 
 extension UIColor {
     
-    public class func colorWithHexString(hexString: String) -> UIColor {
-        return UIColor.redColor()
+    public class func colorWithHexString(hexString: String) -> UIColor? {
+        var r: CGFloat = 0.0
+        var g: CGFloat = 0.0
+        var b: CGFloat = 0.0
+        var a: CGFloat = 0.0
+        if (self.hexToRGBA(hexString, r: &r, g: &g, b: &b , a: &a)) {
+            return UIColor.colorWithRGBA(r: r, g: g, b: b, a: a)
+        }
+        return nil
     }
     
     public class func colorWithRGB(r r: CGFloat, g: CGFloat, b: CGFloat) -> UIColor {
@@ -32,44 +39,33 @@ extension UIColor {
             hex = hex.substringFromIndex(hex.startIndex.advancedBy(2))
         }
         
-        let length = hex.characters.count
+        var length = hex.characters.count
         
         if length != 3 && length != 4 && length != 6 && length != 8 {
             return false
         }
         if length < 5 {
-            
-            hex = "".stringByAppendingFormat("%@%@%@%@%@%@",
-                                             hex.substringWithRange(hex.startIndex.advancedBy(0) ..< hex.startIndex.advancedBy(1)),
-                                             hex.substringWithRange(hex.startIndex.advancedBy(0) ..< hex.startIndex.advancedBy(1)),
-                                             hex.substringWithRange(hex.startIndex.advancedBy(1) ..< hex.startIndex.advancedBy(2)),
-                                             hex.substringWithRange(hex.startIndex.advancedBy(1) ..< hex.startIndex.advancedBy(2)),
-                                             hex.substringWithRange(hex.startIndex.advancedBy(2) ..< hex.startIndex.advancedBy(3)),
-                                             hex.substringWithRange(hex.startIndex.advancedBy(2) ..< hex.startIndex.advancedBy(3)))
+            let red = hex.substringWithRange(hex.startIndex.advancedBy(0) ..< hex.startIndex.advancedBy(1))
+            let greed = hex.substringWithRange(hex.startIndex.advancedBy(1) ..< hex.startIndex.advancedBy(2))
+            let blue = hex.substringWithRange(hex.startIndex.advancedBy(2) ..< hex.startIndex.advancedBy(3))
+            var alpha: String = ""
             if length == 4 {
-                hex = hex.stringByAppendingFormat("%@%@",
-                                                  hex.substringWithRange(hex.startIndex.advancedBy(3) ..< hex.startIndex.advancedBy(4)),
-                                                  hex.substringWithRange(hex.startIndex.advancedBy(3) ..< hex.startIndex.advancedBy(4)))
-            } else {
-                hex = hex.stringByAppendingString("FF")
+                alpha = hex.substringWithRange(hex.startIndex.advancedBy(3) ..< hex.startIndex.advancedBy(4))
             }
-        } else {
-            hex = "".stringByAppendingFormat("%@%@%@%@%@%@",
-                                             hex.substringWithRange(hex.startIndex.advancedBy(0) ..< hex.startIndex.advancedBy(1)),
-                                             hex.substringWithRange(hex.startIndex.advancedBy(1) ..< hex.startIndex.advancedBy(2)),
-                                             hex.substringWithRange(hex.startIndex.advancedBy(2) ..< hex.startIndex.advancedBy(3)),
-                                             hex.substringWithRange(hex.startIndex.advancedBy(3) ..< hex.startIndex.advancedBy(4)),
-                                             hex.substringWithRange(hex.startIndex.advancedBy(4) ..< hex.startIndex.advancedBy(5)),
-                                             hex.substringWithRange(hex.startIndex.advancedBy(5) ..< hex.startIndex.advancedBy(6)))
-            if length == 4 {
-                hex = hex.stringByAppendingFormat("%@%@",
-                                                  hex.substringWithRange(hex.startIndex.advancedBy(6) ..< hex.startIndex.advancedBy(7)),
-                                                  hex.substringWithRange(hex.startIndex.advancedBy(7) ..< hex.startIndex.advancedBy(8)))
-            } else {
-                hex = hex.stringByAppendingString("FF")
-            }
+            hex = "".stringByAppendingFormat("%@%@%@%@%@%@%@%@", red, red, greed, greed, blue, blue, alpha, alpha)
+        }
+        length = hex.characters.count
+        if length < 8 {
+            hex = hex.stringByAppendingString("FF")
         }
         
+        var result: UInt32 = 0
+        let isSuccess = NSScanner(string: hex).scanHexInt(&result)
+        guard isSuccess else { return false }
+        r = CGFloat((result >> 24) & 0xFF)
+        g = CGFloat((result >> 16) & 0xFF)
+        b = CGFloat((result >> 8) & 0xFF)
+        a = CGFloat((result >> 0) & 0xFF)
         
         return true
     }

@@ -25,7 +25,6 @@ class IndexTabBarController: UITabBarController {
         movie.tabBarItem = self.createTabBatItem(title: "电影", image: UIImage(named: "tabbar_mine_unselected"), selectedImage: UIImage(named: "tabbar_mine_selected"))
         
         self.viewControllers = [home, reading, music, movie]
-        
     }
     
     func createTabBatItem(title title: String, image: UIImage?, selectedImage: UIImage?) -> UITabBarItem {

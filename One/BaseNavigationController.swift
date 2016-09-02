@@ -12,8 +12,9 @@ class BaseNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.grayColor()]
+        
+        if let foregroundColor = UIColor.colorWithHexString("#4f5c6b") {
+            self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: foregroundColor]
+        }
     }
-
 }
