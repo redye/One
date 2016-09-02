@@ -70,6 +70,9 @@
 		857A289E1D7927FD00850C20 /* UIButton+Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857A288F1D7927FD00850C20 /* UIButton+Kingfisher.swift */; };
 		857A28A11D7952EB00850C20 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857A28A01D7952EB00850C20 /* SearchViewController.swift */; };
 		857A28A41D79554600850C20 /* PlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857A28A31D79554600850C20 /* PlaceholderView.swift */; };
+		857A28A61D7957F900850C20 /* UIFont(Extentsion).swift in Sources */ = {isa = PBXBuildFile; fileRef = 857A28A51D7957F900850C20 /* UIFont(Extentsion).swift */; };
+		857A28A81D79859600850C20 /* AppIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 857A28A71D79859600850C20 /* AppIcon@2x.png */; };
+		857A28AA1D79872500850C20 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857A28A91D79872500850C20 /* SearchView.swift */; };
 		857C4D031D66B3190044E5EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857C4D021D66B3190044E5EB /* AppDelegate.swift */; };
 		857C4D081D66B3190044E5EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 857C4D061D66B3190044E5EB /* Main.storyboard */; };
 		857C4D0A1D66B3190044E5EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 857C4D091D66B3190044E5EB /* Assets.xcassets */; };
@@ -170,6 +173,9 @@
 		857A288F1D7927FD00850C20 /* UIButton+Kingfisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Kingfisher.swift"; sourceTree = "<group>"; };
 		857A28A01D7952EB00850C20 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		857A28A31D79554600850C20 /* PlaceholderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceholderView.swift; sourceTree = "<group>"; };
+		857A28A51D7957F900850C20 /* UIFont(Extentsion).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont(Extentsion).swift"; sourceTree = "<group>"; };
+		857A28A71D79859600850C20 /* AppIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon@2x.png"; sourceTree = "<group>"; };
+		857A28A91D79872500850C20 /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		857C4CFF1D66B3190044E5EB /* One.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = One.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		857C4D021D66B3190044E5EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		857C4D071D66B3190044E5EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -237,6 +243,7 @@
 		852CFF831D6B08F40065C47F /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				857A28A71D79859600850C20 /* AppIcon@2x.png */,
 				8513A3AC1D74389100F88D54 /* right_bar_button@2x.png */,
 				8513A3AD1D74389100F88D54 /* right_bar_button@3x.png */,
 				85FC1A4E1D6BEE9300CC15D2 /* LaunchImage */,
@@ -326,6 +333,7 @@
 			isa = PBXGroup;
 			children = (
 				857DCFF91D6E9D3400A358A4 /* UIColor(Extensions).swift */,
+				857A28A51D7957F900850C20 /* UIFont(Extentsion).swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -365,6 +373,7 @@
 			isa = PBXGroup;
 			children = (
 				857A28A31D79554600850C20 /* PlaceholderView.swift */,
+				857A28A91D79872500850C20 /* SearchView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -399,8 +408,8 @@
 				85FC1A761D6BFA0000CC15D2 /* Reading */,
 				85FC1A751D6BFA0000CC15D2 /* Music */,
 				85FC1A741D6BFA0000CC15D2 /* Movie */,
-				852CFF831D6B08F40065C47F /* Image */,
 				857A289F1D7952AB00850C20 /* Search */,
+				852CFF831D6B08F40065C47F /* Image */,
 				857C4D021D66B3190044E5EB /* AppDelegate.swift */,
 				85FC1A5D1D6BF95A00CC15D2 /* BaseViewController.swift */,
 				85740F801D6D86890055A1BD /* BaseNavigationController.swift */,
@@ -583,6 +592,7 @@
 				8513A3AF1D74389100F88D54 /* right_bar_button@3x.png in Resources */,
 				857C4D081D66B3190044E5EB /* Main.storyboard in Resources */,
 				852CFFA31D6B09350065C47F /* tabbar_classify_selected@2x.png in Resources */,
+				857A28A81D79859600850C20 /* AppIcon@2x.png in Resources */,
 				852CFFAB1D6B09350065C47F /* yw_1222.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -647,6 +657,7 @@
 				8513A3B71D74415300F88D54 /* TitleView.swift in Sources */,
 				857A289B1D7927FD00850C20 /* Resource.swift in Sources */,
 				855FC39B1D7823A300971FF3 /* Result.swift in Sources */,
+				857A28AA1D79872500850C20 /* SearchView.swift in Sources */,
 				857A28911D7927FD00850C20 /* Image.swift in Sources */,
 				857A28991D7927FD00850C20 /* KingfisherOptionsInfo.swift in Sources */,
 				855FC3941D7823A300971FF3 /* MultipartFormData.swift in Sources */,
@@ -658,6 +669,7 @@
 				855FC3981D7823A300971FF3 /* Request.swift in Sources */,
 				855FC3A11D7823A300971FF3 /* Decoder.swift in Sources */,
 				85740F6A1D6D37740055A1BD /* IndexViewController.swift in Sources */,
+				857A28A61D7957F900850C20 /* UIFont(Extentsion).swift in Sources */,
 				857A289C1D7927FD00850C20 /* String+MD5.swift in Sources */,
 				855FC3A21D7823A300971FF3 /* Encoder.swift in Sources */,
 				857DD00A1D6EC9DB00A358A4 /* ReadingViewController.swift in Sources */,

@@ -8,7 +8,7 @@
 
 import UIKit
 
-let HomeMargin: CGFloat = 10.0
+let kHomeMargin: CGFloat = 10.0
 
 class HomeViewController: BaseViewController {
     
@@ -60,9 +60,9 @@ class HomeViewController: BaseViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        let width = CGRectGetWidth(self.contentView.frame) - HomeMargin * 2
-        let height = CGRectGetHeight(self.contentView.frame) - CGRectGetHeight((self.tabBarController?.tabBar.frame)!) - HomeMargin
-        self.scrollView.frame = CGRectMake(HomeMargin, HomeMargin, width, height)
+        let width = CGRectGetWidth(self.contentView.frame) - kHomeMargin * 2
+        let height = CGRectGetHeight(self.contentView.frame) - CGRectGetHeight((self.tabBarController?.tabBar.frame)!) - kHomeMargin
+        self.scrollView.frame = CGRectMake(kHomeMargin, kHomeMargin, width, height)
         self.scrollView.contentSize = CGSize(width: width * 3, height: height)
         self.scrollView.setContentOffset(CGPointMake(width, 0), animated: false)
         self.leftArtView.frame = CGRectMake(0, 0, width, height)

@@ -22,6 +22,7 @@ public class BaseViewController: UIViewController {
     }
     
     public func setUI() {
+        self.view.backgroundColor = UIColor.whiteColor()
         self.view.addSubview(self.contentView)
         self.contentView.frame = CGRectMake(0, 64, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) - 64)
         self.automaticallyAdjustsScrollViewInsets = false
@@ -40,11 +41,11 @@ public class BaseViewController: UIViewController {
     }
     
     public func rightButtonClick() {
-        print("设置")
+        printLog("设置")
     }
     
     public func search() {
-       print("搜索")
+        let searchViewController = SearchViewController()
+        self.presentViewController(searchViewController, animated: true, completion: nil)
     }
-
 }

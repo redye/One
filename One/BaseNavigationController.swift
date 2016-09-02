@@ -16,5 +16,6 @@ class BaseNavigationController: UINavigationController {
         if let foregroundColor = UIColor.colorWithHexString("#4f5c6b") {
             self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: foregroundColor]
         }
+        self.navigationBar.barTintColor = UIColor.whiteColor()
     }
 }
