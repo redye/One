@@ -74,7 +74,7 @@ class HomeViewController: BaseViewController {
 // MARK: - Request
 extension HomeViewController {
     func requestData(animated: Bool) {
-        let urlString = BaseURL.stringByAppendingString(ApiHpMore)
+        let urlString = kBaseURL.stringByAppendingString(kApiHpMore)
         GET(urlString, parameters: nil) { [unowned self] json, error in
             guard let json = json else {
                 printLog(error)

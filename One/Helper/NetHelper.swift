@@ -17,3 +17,13 @@ func GET(URLString: String, parameters: [String: AnyObject]?, completionHandler:
         }
     }
 }
+
+func GET(URLString: String, parameters: [String: AnyObject]?, completionHandler: (json: [String: AnyObject]?, request: NSURLRequest?, error: NSError?) -> Void) {
+    Manager.sharedInstance.request(.GET, URLString, parameters: parameters, encoding: ParameterEncoding.URL, headers: nil).responseJSON { (response: Response<AnyObject, NSError>) in
+        if let json = response.result.value {
+            completionHandler(json: json as? [String: AnyObject], request: response.request, error: nil)
+        } else {
+            completionHandler(json: nil, request: response.request, error: response.result.error)
+        }
+    }
+}

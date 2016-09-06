@@ -84,7 +84,7 @@ extension ArtView {
         
         
         y = CGRectGetMaxY(self.dateLabel.frame)
-        if y <= CGRectGetHeight(self.contentView.frame) {
+        if y >= CGRectGetHeight(self.contentView.frame) {
             y  = y + 26 * kRatio
         }
         self.contentView.contentSize = CGSizeMake(width, y)
@@ -95,8 +95,7 @@ extension ArtView {
 // MARK: - Public
 extension ArtView {
     func updateWith(model model: Ana?) {
-        guard let model = model else { return }
-        let ana = model
+        guard let ana = model else { return }
         self.titleView.updateWith(title: ana.hpTitle, author: ana.hpAuthor)
         self.dateLabel.text = ana.lastUpdateDate
         self.imageView.kf_setImageWithURL(NSURL(string: ana.hpImgUrl!)!)

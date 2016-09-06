@@ -48,4 +48,8 @@ public class BaseViewController: UIViewController {
         let searchViewController = SearchViewController()
         self.presentViewController(searchViewController, animated: true, completion: nil)
     }
+    
+    deinit {
+        printLog("释放")
+    }
 }

@@ -9,5 +9,6 @@
 import Foundation
 
 
-let BaseURL = "http://v3.wufazhuce.com:8000"
-let ApiHpMore = "/api/hp/more/0"
+let kBaseURL = "http://v3.wufazhuce.com:8000"
+let kApiHpMore = "/api/hp/more/0"
+let kApiSearch = "/api/search/"
