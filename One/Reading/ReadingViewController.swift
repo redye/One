@@ -18,6 +18,6 @@ class ReadingViewController: BaseViewController {
 
     override func setUI() {
         super.setUI()
-        self.navigationItem.title = "阅读"
+        self.title = "阅读"
     }
 }

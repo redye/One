@@ -18,7 +18,7 @@ class MovieViewController: BaseViewController {
 
     override func setUI() {
         super.setUI()
-        self.navigationItem.title = "电影"
+        self.title = "电影"
     }
 
 }

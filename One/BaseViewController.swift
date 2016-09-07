@@ -27,7 +27,6 @@ public class BaseViewController: UIViewController {
         self.contentView.frame = CGRectMake(0, 64, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) - 64)
         self.automaticallyAdjustsScrollViewInsets = false
         
-        self.navigationItem.title = "One"
         let leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Search, target: self, action: #selector(self.search))
         self.navigationItem.leftBarButtonItem = leftBarButtonItem
         

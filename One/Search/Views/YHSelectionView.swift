@@ -21,6 +21,7 @@ public class YHSelectionView: UIView {
     private var selections: [String]
     private var buttons: [UIButton] = [UIButton]()
     private var indicatorLine: UIView!
+    private var seperatorLine: UIView!
     private var scrollView: UIScrollView!
     private var lastSelectionIndex: Int = kSelectionViewBaseTag
     
@@ -57,6 +58,9 @@ extension YHSelectionView {
         scrollView.showsHorizontalScrollIndicator = false
         self.addSubview(scrollView)
         
+        seperatorLine = UIView()
+        self.addSubview(seperatorLine)
+        
         for i in 0 ..< selections.count {
             let button = UIButton(type: .Custom)
             let title = selections[i]
@@ -74,6 +78,8 @@ extension YHSelectionView {
     
     private func layoutUI() {
         scrollView.frame = self.bounds
+        seperatorLine.frame = CGRect(x: 0, y: CGRectGetHeight(self.frame) - 0.5, width: CGRectGetWidth(self.frame), height: 0.5)
+        seperatorLine.backgroundColor = UIColor.colorWithHexString("#dddddd")
         
         let height = CGRectGetHeight(self.frame)
         for (index, button) in buttons.enumerate() {
@@ -104,6 +110,7 @@ extension YHSelectionView {
         lastButton.selected = false
         button.titleLabel?.font = UIFont.systemFontOfSize(selectedFont)
         button.selected = true
+        self.adjustScrollViewContentOffset(button)
         let delta = fabs(CGFloat(self.lastSelectionIndex - button.tag))
         if delta == 1 {
             UIView.animateWithDuration(kSelectionViewAnimationDuration) {
@@ -114,5 +121,25 @@ extension YHSelectionView {
         }
         self.lastSelectionIndex = button.tag
         self.delegate?.seletionView?(self, didSelectedAtIndex: button.tag - kSelectionViewBaseTag)
+        
+    }
+    
+    private func adjustScrollViewContentOffset(button: UIButton) {
+        if scrollView.contentSize.width == CGRectGetWidth(scrollView.frame) { return }
+        var offset = scrollView.contentOffset
+        let boundary = CGRectGetMaxX(button.frame)
+        let delta = CGRectGetWidth(scrollView.frame) - boundary
+        if delta <= itemWidth { // 向右滑动
+            offset.x += itemWidth
+            if offset.x + CGRectGetWidth(scrollView.frame) > scrollView.contentSize.width {
+                offset.x = scrollView.contentSize.width - CGRectGetWidth(scrollView.frame)
+            }
+        } else { // 向左滑动
+            offset.x -= itemWidth
+            if offset.x < 0 {
+                offset.x = 0
+            }
+        }
+        scrollView.setContentOffset(offset, animated: true)
     }
 }

@@ -44,6 +44,7 @@ class HomeViewController: BaseViewController {
     
     override func setUI() {
         super.setUI()
+        self.title = "ONE"
         self.scrollView.delegate = self
         self.contentView.addSubview(self.scrollView)
         

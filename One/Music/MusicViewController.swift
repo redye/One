@@ -12,12 +12,10 @@ class MusicViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func setUI() {
         super.setUI()
-        self.navigationItem.title = "音乐"
+        self.title = "音乐"
     }
 }

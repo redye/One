@@ -27,8 +27,10 @@ class SearchViewController: BaseViewController {
     private var type: SearchType = .Ana
     private var key: String = ""
     private var tableHeaderView: YHSelectionView = {
+        let selections = ["插画", "阅读", "音乐", "电影", "音乐人"]
         let tableHeaderView = YHSelectionView(frame: CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.size.width, height: 40),
-                                              selections: ["插画", "阅读", "音乐", "电影", "音乐人"])
+                                              selections: selections)
+        tableHeaderView.itemWidth = CGRectGetWidth(UIScreen.mainScreen().bounds) / CGFloat(selections.count)
         tableHeaderView.backgroundColor = UIColor.whiteColor()
         return tableHeaderView
     }()
