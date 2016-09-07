@@ -135,19 +135,21 @@ extension YHSelectionView {
     private func adjustScrollViewContentOffset(button: UIButton) {
         if scrollView.contentSize.width == CGRectGetWidth(scrollView.frame) { return }
         var offset = scrollView.contentOffset
-        let boundary = CGRectGetMaxX(button.frame)
-        let delta = CGRectGetWidth(scrollView.frame) - boundary
-        if delta <= itemWidth { // 向右滑动
+        let position = scrollView.convertRect(button.frame, toView: self)
+        let orgin = position.origin
+        let count = Int(CGRectGetWidth(scrollView.frame) / itemWidth)
+        if orgin.x >= itemWidth * CGFloat(count - 1) {
             offset.x += itemWidth
             if offset.x + CGRectGetWidth(scrollView.frame) > scrollView.contentSize.width {
                 offset.x = scrollView.contentSize.width - CGRectGetWidth(scrollView.frame)
             }
-        } else { // 向左滑动
+        } else if orgin.x <= itemWidth {
             offset.x -= itemWidth
             if offset.x < 0 {
                 offset.x = 0
             }
         }
+        
         scrollView.setContentOffset(offset, animated: true)
     }
 }
