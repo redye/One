@@ -23,14 +23,43 @@ public class YHSelectionView: UIView {
     private var indicatorLine: UIView!
     private var seperatorLine: UIView!
     private var scrollView: UIScrollView!
-    private var lastSelectionIndex: Int = kSelectionViewBaseTag
+    private var lastSelectionIndex: Int = 0
     
-    public var normalColor: UIColor = UIColor.lightGrayColor()
-    public var selectedColor: UIColor = UIColor.redColor()
-    public var indicatorColor: UIColor = UIColor.redColor()
-    public var normalFont: CGFloat = 13.0
-    public var selectedFont: CGFloat = 16.0
-    public var itemWidth: CGFloat = 75.0
+    public var normalColor: UIColor = UIColor.lightGrayColor() {
+        didSet {
+            setNeedsLayout()
+        }
+    }
+    public var selectedColor: UIColor = UIColor.redColor() {
+        didSet {
+            setNeedsLayout()
+        }
+    }
+    public var indicatorColor: UIColor = UIColor.redColor() {
+        didSet {
+            setNeedsLayout()
+        }
+    }
+    public var seperatorColor: UIColor = UIColor.grayColor() {
+        didSet {
+            setNeedsLayout()
+        }
+    }
+    public var normalFont: CGFloat = 13.0 {
+        didSet {
+            setNeedsLayout()
+        }
+    }
+    public var selectedFont: CGFloat = 16.0 {
+        didSet {
+            setNeedsLayout()
+        }
+    }
+    public var itemWidth: CGFloat = 75.0 {
+        didSet {
+            setNeedsLayout()
+        }
+    }
     weak public var delegate: YHSelectionViewDelegate?
     
     /**
@@ -87,7 +116,7 @@ extension YHSelectionView {
     private func layoutUI() {
         scrollView.frame = self.bounds
         seperatorLine.frame = CGRect(x: 0, y: CGRectGetHeight(self.frame) - 0.5, width: CGRectGetWidth(self.frame), height: 0.5)
-        seperatorLine.backgroundColor = UIColor.colorWithHexString("#dddddd")
+        seperatorLine.backgroundColor = seperatorColor
         
         let height = CGRectGetHeight(self.frame)
         for (index, button) in buttons.enumerate() {
@@ -95,13 +124,13 @@ extension YHSelectionView {
             button.setTitleColor(normalColor, forState: .Normal)
             button.setTitleColor(selectedColor, forState: .Selected)
             button.titleLabel?.font = UIFont.systemFontOfSize(normalFont)
-            if (index == 0) {
+            if (index == self.lastSelectionIndex) {
                 button.selected = true
                 button.titleLabel?.font = UIFont.systemFontOfSize(selectedFont)
             }
         }
         
-        indicatorLine.frame = CGRect(x: 0, y: height - kSelectionViewIndicatorLineHeight, width: itemWidth, height: kSelectionViewIndicatorLineHeight)
+        indicatorLine.frame = CGRect(x: itemWidth * CGFloat(self.lastSelectionIndex), y: height - kSelectionViewIndicatorLineHeight, width: itemWidth, height: kSelectionViewIndicatorLineHeight)
         indicatorLine.backgroundColor = indicatorColor
         
         scrollView.contentSize = CGSize(width: itemWidth * CGFloat(selections.count), height: height)
@@ -111,15 +140,15 @@ extension YHSelectionView {
 
 extension YHSelectionView {
     @objc private func buttonClick(button: UIButton) {
-        guard self.lastSelectionIndex != button.tag else { return }
+        guard self.lastSelectionIndex != button.tag - kSelectionViewBaseTag else { return }
         
-        let lastButton = buttons[self.lastSelectionIndex - kSelectionViewBaseTag]
+        let lastButton = buttons[self.lastSelectionIndex]
         lastButton.titleLabel?.font = UIFont.systemFontOfSize(normalFont)
         lastButton.selected = false
         button.titleLabel?.font = UIFont.systemFontOfSize(selectedFont)
         button.selected = true
         self.adjustScrollViewContentOffset(button)
-        let delta = fabs(CGFloat(self.lastSelectionIndex - button.tag))
+        let delta = fabs(CGFloat(self.lastSelectionIndex - (button.tag - kSelectionViewBaseTag)))
         if delta == 1 {
             UIView.animateWithDuration(kSelectionViewAnimationDuration) {
                 self.indicatorLine.center.x = button.center.x
@@ -127,7 +156,7 @@ extension YHSelectionView {
         } else {
             self.indicatorLine.center.x = button.center.x
         }
-        self.lastSelectionIndex = button.tag
+        self.lastSelectionIndex = button.tag - kSelectionViewBaseTag
         self.delegate?.seletionView?(self, didSelectedAtIndex: button.tag - kSelectionViewBaseTag)
         
     }
@@ -149,7 +178,7 @@ extension YHSelectionView {
                 offset.x = 0
             }
         }
-        
+
         scrollView.setContentOffset(offset, animated: true)
     }
 }
