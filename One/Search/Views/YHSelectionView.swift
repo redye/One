@@ -33,6 +33,14 @@ public class YHSelectionView: UIView {
     public var itemWidth: CGFloat = 75.0
     weak public var delegate: YHSelectionViewDelegate?
     
+    /**
+     创建
+     
+     - parameter frame:      frame
+     - parameter selections: seletion items
+     
+     - returns: self
+     */
     required public init(frame: CGRect, selections: [String]) {
         self.selections = selections
         super.init(frame: frame)
