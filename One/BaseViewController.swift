@@ -40,7 +40,11 @@ public class BaseViewController: UIViewController {
     }
     
     public func rightButtonClick() {
-        printLog("设置")
+        let settingViewController = SettingViewController()
+        let settingNavigationController = SettingNavigationController(rootViewController: settingViewController)
+        settingNavigationController.modalTransitionStyle = .FlipHorizontal
+        settingNavigationController.modalPresentationStyle = .PageSheet
+        self.presentViewController(settingNavigationController, animated: true, completion: nil)
     }
     
     public func search() {
