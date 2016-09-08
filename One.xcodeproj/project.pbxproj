@@ -12,6 +12,7 @@
 		8513A3B21D743B5300F88D54 /* ArtView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8513A3B11D743B5300F88D54 /* ArtView.swift */; };
 		8513A3B51D743DA600F88D54 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8513A3B41D743DA600F88D54 /* Common.swift */; };
 		8513A3B71D74415300F88D54 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8513A3B61D74415300F88D54 /* TitleView.swift */; };
+		8523144C1D816FCA00806132 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8523144B1D816FCA00806132 /* CommentCell.swift */; };
 		852CFF931D6B091F0065C47F /* IMG_0764.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 852CFF881D6B091F0065C47F /* IMG_0764.PNG */; };
 		852CFFA31D6B09350065C47F /* tabbar_classify_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 852CFF9A1D6B09350065C47F /* tabbar_classify_selected@2x.png */; };
 		852CFFA41D6B09350065C47F /* tabbar_classify_unselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 852CFF9B1D6B09350065C47F /* tabbar_classify_unselected@2x.png */; };
@@ -22,6 +23,7 @@
 		852CFFA91D6B09350065C47F /* tabbar_mine_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 852CFFA01D6B09350065C47F /* tabbar_mine_selected@2x.png */; };
 		852CFFAA1D6B09350065C47F /* tabbar_mine_unselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 852CFFA11D6B09350065C47F /* tabbar_mine_unselected@2x.png */; };
 		852CFFAB1D6B09350065C47F /* yw_1222.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 852CFFA21D6B09350065C47F /* yw_1222.jpg */; };
+		855684851D8140B300E4D6BB /* MusicHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855684841D8140B300E4D6BB /* MusicHeaderView.swift */; };
 		855FC3621D77D90000971FF3 /* NetHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855FC3611D77D90000971FF3 /* NetHelper.swift */; };
 		855FC3901D7823A300971FF3 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855FC3761D7823A300971FF3 /* Alamofire.swift */; };
 		855FC3911D7823A300971FF3 /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855FC3771D7823A300971FF3 /* Download.swift */; };
@@ -124,6 +126,7 @@
 		8513A3B11D743B5300F88D54 /* ArtView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtView.swift; sourceTree = "<group>"; };
 		8513A3B41D743DA600F88D54 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		8513A3B61D74415300F88D54 /* TitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		8523144B1D816FCA00806132 /* CommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		852CFF881D6B091F0065C47F /* IMG_0764.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_0764.PNG; sourceTree = "<group>"; };
 		852CFF9A1D6B09350065C47F /* tabbar_classify_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_classify_selected@2x.png"; sourceTree = "<group>"; };
 		852CFF9B1D6B09350065C47F /* tabbar_classify_unselected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_classify_unselected@2x.png"; sourceTree = "<group>"; };
@@ -134,6 +137,7 @@
 		852CFFA01D6B09350065C47F /* tabbar_mine_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_mine_selected@2x.png"; sourceTree = "<group>"; };
 		852CFFA11D6B09350065C47F /* tabbar_mine_unselected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_mine_unselected@2x.png"; sourceTree = "<group>"; };
 		852CFFA21D6B09350065C47F /* yw_1222.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yw_1222.jpg; sourceTree = "<group>"; };
+		855684841D8140B300E4D6BB /* MusicHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicHeaderView.swift; sourceTree = "<group>"; };
 		855FC3611D77D90000971FF3 /* NetHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetHelper.swift; sourceTree = "<group>"; };
 		855FC3751D7823A300971FF3 /* Alamofire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alamofire.h; sourceTree = "<group>"; };
 		855FC3761D7823A300971FF3 /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
@@ -286,6 +290,15 @@
 				852CFF881D6B091F0065C47F /* IMG_0764.PNG */,
 			);
 			path = Image;
+			sourceTree = "<group>";
+		};
+		855684801D81067C00E4D6BB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				855684841D8140B300E4D6BB /* MusicHeaderView.swift */,
+				8523144B1D816FCA00806132 /* CommentCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		855FC3631D78234B00971FF3 /* Models */ = {
@@ -526,6 +539,7 @@
 		85FC1A751D6BFA0000CC15D2 /* Music */ = {
 			isa = PBXGroup;
 			children = (
+				855684801D81067C00E4D6BB /* Views */,
 				857DD0031D6EC9D100A358A4 /* MusicNavigationController.swift */,
 				857DD0041D6EC9D100A358A4 /* MusicViewController.swift */,
 			);
@@ -666,6 +680,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8523144C1D816FCA00806132 /* CommentCell.swift in Sources */,
 				855FC3931D7823A300971FF3 /* Manager.swift in Sources */,
 				8513A3B51D743DA600F88D54 /* Common.swift in Sources */,
 				857DD0061D6EC9D100A358A4 /* MusicViewController.swift in Sources */,
@@ -735,6 +750,7 @@
 				858A03401D7EA56600AE2C5E /* Authors.swift in Sources */,
 				857A28A61D7957F900850C20 /* UIFont(Extentsion).swift in Sources */,
 				857A289C1D7927FD00850C20 /* String+MD5.swift in Sources */,
+				855684851D8140B300E4D6BB /* MusicHeaderView.swift in Sources */,
 				855FC3A21D7823A300971FF3 /* Encoder.swift in Sources */,
 				857DD00A1D6EC9DB00A358A4 /* ReadingViewController.swift in Sources */,
 			);
